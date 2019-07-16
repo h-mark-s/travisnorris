@@ -7,6 +7,6 @@ before deploy:
   - docker login -u "$REGISTRY_USER" -p "$REGISTRY_PASS"
 deploy:
   provider: script
-  script: docker push hmarks/chucknorris:latest
+  script: docker login -u "$REGISTRY_USER" -p "$REGISTRY_PASS" \ docker push hmarks/chucknorris:latest
   on:
     branch: dev
