@@ -10,7 +10,8 @@ deploy:
   provider: script
   script: bash docker_push
   provider: elasticbeanstalk
-  acces_key_id: "$ACCESKEYID"
+  acces_key_id:
+    secure: "$ACCESKEYID"
   secure_acces_key:
     secure: "$SECRETACCESKEY"
   region: "us-east-1"
