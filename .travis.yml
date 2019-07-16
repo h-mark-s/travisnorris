@@ -8,10 +8,6 @@ before_deploy:
 
 deploy:
   provider: script
-  script:
-    - echo "$REGISTRY_PASS" | docker login -u "$REGISTRY_USER" --password-stdin
-  provider: script
-  script:
-    - docker push hmarks/chucknorris
+  script: bash docker_push
   on:
     branch: dev
