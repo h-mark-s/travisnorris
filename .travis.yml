@@ -9,7 +9,7 @@ deploy:
     - sudo docker login -u "$REGISTRY_USER" -p "$REGISTRY_PASS"
   provider: script
   script:
-    - docker tag hmarks/chucknorris:latest hmarks/chucknorris:trying
+    - sudo docker tag hmarks/chucknorris:latest hmarks/chucknorris:trying
   provider: script
   script:
     - sudo docker push hmarks/chucknorris:trying
