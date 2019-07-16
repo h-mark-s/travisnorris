@@ -9,6 +9,8 @@ deploy:
   provider: script
   script:
     - docker login -u "$REGISTRY_USER" -p "$REGISTRY_PASS"
+  provider: script
+  script:
     - docker push hmarks/chucknorris
   on:
     branch: dev
