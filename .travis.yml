@@ -8,9 +8,9 @@ before deploy:
 deploy:
   provider: script
   script:
-    - docker login -u "$REGISTRY_USER" -p "$REGISTRY_PASS"
+    - sudo docker login -u "$REGISTRY_USER" -p "$REGISTRY_PASS"
   provider: script
   script:
-    - sudo docker push hmarks/chucknorris
+    - docker push hmarks/chucknorris
   on:
     branch: dev
