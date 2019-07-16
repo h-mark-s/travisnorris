@@ -2,15 +2,13 @@ sudo: required
 services:
   - docker
 script:
-  - docker build -t hmarks/chucknorris .
-before deploy:
-  - docker login -u "$REGISTRY_USER" -p "$REGISTRY_PASS"
+  - sudo docker build -t hmarks/chucknorris .
 deploy:
   provider: script
   script:
     - sudo docker login -u "$REGISTRY_USER" -p "$REGISTRY_PASS"
   provider: script
   script:
-    - docker push hmarks/chucknorris
+    - sudo docker push hmarks/chucknorris
   on:
     branch: dev
