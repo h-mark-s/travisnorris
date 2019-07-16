@@ -12,7 +12,7 @@ deploy:
   provider: elasticbeanstalk
   access_key_id:
     secure: "$ACCESKEYID"
-  secure_access_key:
+  secret_access_key:
     secure: "$SECRETACCESKEY"
   region: "us-east-1"
   app: "chucknorris_travis"
