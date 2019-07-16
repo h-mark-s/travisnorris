@@ -9,5 +9,12 @@ before_deploy:
 deploy:
   provider: script
   script: bash docker_push
+  provider: elasticbeanstalk
+  acces_key_id: "$ACCESKEYID"
+  secure_acces_key:
+    secure: "$SECRETACCESKEY"
+  region: "us-east-1"
+  app: "chucknorris_travis"
+  env: "chucknorris_travis-dev"
   on:
     branch: dev
