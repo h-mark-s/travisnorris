@@ -18,9 +18,6 @@ deploy:
 
 after_deploy:
   provider: script
-  script:
-    - echo $PASSWORD\n | ssh $USERNAME@$PUBLICIP
-    - sleep 30
-    - bash /tmp/build.sh
+  script: bash deploy
   on:
     branch: dev
