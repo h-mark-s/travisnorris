@@ -8,7 +8,7 @@ addons:
     - $PUBLICIP
 
 install:
-  - echo $PUBLICIP >> $HOME/.ssh/known_hosts
+  - echo $KNOWNHOST >> $HOME/.ssh/known_hosts
 
 before_deploy:
   - docker build -t hmarks/chucknorris .
