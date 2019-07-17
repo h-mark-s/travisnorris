@@ -13,6 +13,8 @@ before_deploy:
 deploy:
   provider: script
   script: bash docker_push
+  on:
+    branch: dev
 
 after_deploy:
   provider: script
