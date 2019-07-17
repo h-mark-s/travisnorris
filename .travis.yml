@@ -16,7 +16,7 @@ deploy:
   on:
     branch: dev
 
-after_deploy:
+deploy2:
   provider: script
   script: bash deploy
   on:
