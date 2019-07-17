@@ -10,7 +10,7 @@ addons:
 before_deploy:
   - docker build -t hmarks/chucknorris .
 
-deploy:
+docker_deploy:
   provider: script
   script: bash docker_push
   on:
@@ -22,3 +22,5 @@ deploy:
     - echo $PASSWORD\n | ssh $USERNAME@$PUBLICIP
     - sleep 30
     - bash /tmp/build.sh
+  on:
+    branch: dev
