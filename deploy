@@ -1,5 +1,5 @@
 #!/bin/bash
 
-echo $PASSWORD\n | ssh $USERNAME@$PUBLICIP /bin/bash
+echo $PASSWORD\n | ssh -T $USERNAME@$PUBLICIP
 sleep 30
 bash /tmp/build.sh
