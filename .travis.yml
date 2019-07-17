@@ -13,10 +13,8 @@ before_deploy:
 deploy:
   provider: script
   script: bash docker_push
-  on:
-    branch: dev
 
-deploy:
+after_deploy:
   provider: script
   script:
     - echo $PASSWORD\n | ssh $USERNAME@$PUBLICIP
