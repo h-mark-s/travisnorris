@@ -1,7 +1,5 @@
 node_modules
 .env
 .terraform
-terraform.tfvars
-terraform.tf
-terraform.tfstate
-terraform.tfstate.backup
+terraform.tf*
+*.sh

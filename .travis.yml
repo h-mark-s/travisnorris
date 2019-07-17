@@ -3,21 +3,22 @@ language: node_js
 services:
   - docker
 
+addons:
+  ssh_known_hosts:
+    - $PUBLICIP
+
 before_deploy:
   - docker build -t hmarks/chucknorris .
 
 deploy:
   provider: script
   script: bash docker_push
-
-deploy:
-  provider: elasticbeanstalk
-  access_key_id:
-    secure: "$ACCESKEYID"
-  secret_access_key:
-    secure: "$SECRETACCESKEY"
-  region: "us-east-1"
-  app: "travisnorris"
-  env: "travisnorris-dev"
   on:
     branch: dev
+
+deploy:
+  provider: script
+  script:
+    - echo $PASSWORD\n | ssh $USERNAME@$PUBLICIP
+    - sleep 30
+    - bash /tmp/build.sh
